@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba Backbone</title>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/backbone/backbone.js"></script>
+  <script>
+
+  // Contacto = Backbone.Model.extend();
+  // contacto = new Contacto({
+  //   'nombre': 'Omar fonseca',
+  //   'telefono': '999 999 999'
+  // });
+  //
+  //
+  // console.log(contacto.toJSON());
+  // console.log('El telefono de' + contacto.get('nombre')+ 'es el' + contacto.get('telefono') );
+
+  VistaPrincipal = Backbone.View.extend({
+    tagName : 'h1',
+    initialize: function(){
+        var nombre = prompt ( 'Como te llamas? \n (Por defecto = Backbone)' );
+        nombre = nombre || 'Backbone';
+        this.render( nombre );
+    },
+    render: function( nombre ){
+        this.$el.text( 'Hola ' + nombre +'!' );
+        $( '#vista01' ).html( this.el );
+        return this;
+    }
+});
+
+vistaApp = new VistaPrincipal();
+  </script>
+</head>
+<body>
+
+
+
+</body>
+</html>
